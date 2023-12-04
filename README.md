@@ -1,4 +1,4 @@
-# SafeComm-Digital-Security-Solutions
+# SafeComm-Digital-Security-Solutions:
 
 Welcome to SafeComm Digital Security Solutions! In the modern digital age, people across the globe
 communicate largely through text messages. SMSs have become an integral part of our daily lives.
@@ -10,31 +10,51 @@ ones. The objective is to design a mechanism that identifies and flags these fra
 automatically. This way, we can warn users or even prevent these messages from being delivered
 altogether.
 
-# *Dataset features*
+## Team Members:
+- Eliya Allam [289791]
+- Giulio Presaghi [287611]
+- Marco Tagliavini [283361]
 
-• Fraudulent: Binary indicator if the SMS is fraudulent (1 for Yes, 0 for No)
+## Introduction:
+### *Background:*
 
-• SMS Text: The content of the SMS
+In the era of digital communication, Short Message Service (SMS) plays a pivotal role in connecting people globally. Unfortunately, this convenience comes with a potential downside - SMS-based fraud. Unscrupulous actors often exploit SMS to send deceptive or harmful messages to unsuspecting individuals. SafeComm Digital Security Solutions has teamed up with a major telecom provider to combat this issue. Leveraging a dataset of anonymized SMS data, our objective is to design a robust mechanism capable of automatically identifying and flagging fraudulent messages. This proactive approach aims to warn users and, when necessary, prevent the delivery of such malicious messages.
 
-• ID: A unique identifier for each SMS
+### *Dataset Overview:*
 
-• Date and Time: Timestamp indicating when the SMS was sent
+The dataset provided for this project includes a mix of regular day-to-day messages and potentially fraudulent ones. Each SMS is labeled with a binary indicator (1 for fraudulent, 0 for non-fraudulent). Key features include the SMS text content, a unique identifier (ID) for each message, and a timestamp indicating when the SMS was sent.
 
-# *Assignment*
+## Methods:
+### Data Preprocessing
+- Imputation of Missing Values:
+Before diving into the machine learning models, we conducted a thorough examination of the dataset to identify and handle missing values. Any missing values in features were imputed using appropriate techniques to maintain the integrity of the dataset.
 
-• Perform an Explanatory data analysis (EDA) with visualization using the entire dataset..
+- Categorical Feature Encoding:
+Luckily in our case the dataset was already presented with Fraudulent and Non-Fraudulent binary values of 0 and 1. This indeed ensured that we did not have to proceed with one-hot encoding, but instead sentiment analysis was used to analyse the text in the actual SMS fields. This was done to inspect every single word written in the SMS's and check for fraudulence. 
 
-• Preprocess the dataset (impute missing values, encode categorical features with one-hot
-encoding). Your goal is to estimate whether an SMS is fraudulent
+### Exploratory Data Analysis (EDA)
+- Visualization:
+To better understand the distribution and characteristics of the dataset, we performed Exploratory Data Analysis (EDA). Visualizations, including histograms, and time series plots, were generated to provide insights into the prevalence of fraudulent and non-fraudulent messages, patterns in message lengths, and temporal trends.
 
-• Define whether this is a regression, classification or clustering problem, explain why and
-choose your model design accordingly. Test at least 3 different models. First, create a
-validation set from the training set to analyze the behaviour with the default
-hyperparameters. Then use cross-validation to find the best set of hyperparameters. You
-must describe every hyperparameter tuned (the more, the better)
+### Model Selection and Design
+- Problem Definition:
+Given the binary nature of the 'Fraudulent' indicator, this project is framed as a binary classification problem. The objective is to predict whether an SMS is fraudulent or not.
 
-• Select the best architecture using the right metric
+- Algorithm Selection:
+We experimented with multiple classification algorithms, including but not limited to Logistic Regression, Random Forest, and Support Vector Machines. These algorithms were chosen for their suitability in handling binary classification tasks.
 
-• Compute the performances of the test set
+- Training Overview:
+The dataset was split into training and validation sets to assess model performance. The training process involved fitting the chosen algorithms to the training set and tuning hyperparameters. The validation set facilitated the evaluation of each model's performance before moving to the final testing phase.
 
-• Explain your results
+### Environment and Reproducibility
+- Conda Environment:
+To ensure reproducibility, we created a Conda environment with a comprehensive list of dependencies. The environment details, including packages and versions, are provided in the project repository. This information allows the reader to recreate the exact environment used for this project.
+
+**By detailing our methods, design choices, and environment setup, we aim to provide readers with a clear understanding of the rationale behind our decisions and enable them to replicate our work effectively. The inclusion of a flowchart enhances the visual comprehension of the entire process.**
+
+
+
+
+
+
+
