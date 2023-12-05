@@ -83,9 +83,7 @@ After proceeding with each one of our classification models, comparing the perfo
 
 - Hyperparameter Tuning Results for SVM
 In regards to our SVM classification model, where hyperparameter tuning was applied to SVM, we observed a significant improvement in overall performance. The tuned SVM model exhibited enhanced accuracy, precision, recall, and F1 score compared to the baseline configuration.
-- This can be shown in the table below perfectly highlighting the improvement of our SVM model:
-
-### ![SVM Table](SVM_Table.png)
+- This can be seen perfectly in the main.ipynb file, within confusion matrices and classification reports.
 
 ## Conclusion
 In conclusion, our project focused on addressing SMS-based fraud using machine learning models, specifically SVM, Random Forest, and MultinomialNB. Through comprehensive experiments and analysis, we identified SVM as the most effective model, achieving superior results in accuracy, precision, recall, and F1 score. The hyperparameter tuning of SVM further optimized its performance, showcasing the significance of model configuration in fraud detection. Additionally, considering temporal patterns contributed to a more nuanced understanding, enhancing the model's capabilities during specific time intervals. Our work underscores the importance of selecting appropriate models, fine-tuning parameters, and incorporating temporal insights for robust fraud detection in SMS communications.
