@@ -41,7 +41,7 @@ Given the binary nature of the 'Fraudulent' indicator, this project is framed as
 
 ### Model Selection and Design
 - Algorithm Selection:
-The choice for the algorithms was taken by following some fundamental characteristics for this kind of analysis. Recall, precision were the most important (since in our problem is better to have false positives than false negatives). Given that, we decided to adopt those models both for semplicity and efficiency in use: Logistic regression, Support Vector Machine and Random forests were the models chosen.
+The choice for the algorithms was taken by following some fundamental characteristics for this kind of analysis. Recall, precision were the most important (since in our problem is better to have false positives than false negatives). Given that, we decided to adopt those models both for semplicity and efficiency in use: Logistic regression, Support Vector Machine and Random forests were the models chosen. The baseline for this experiment is meant to be the Logistic Regression model since is one of the simplest linear classification model. In this way, we could try and experiment easily how various preprocessing methods affect the yield of the model.
 
 - Training Overview:
 The dataset was split into training and test sets to assess model performance. The training process involved fitting the train set into the chosen algorithm with default parameters and then tuning them trying to improve the yield.
@@ -49,21 +49,11 @@ The dataset was split into training and test sets to assess model performance. T
 - Hyperparameters tuning
 Using grid searches algorithms, it was our goal to find better parameters to apply to the models, in order to achieve even better results. Comparison at the end (both between models and between the standard-hyperparameters results and the tuned-hyperparameters) helped to understand the importance of tuning and to decide the best model (although in some cases the tuning seems not so relevant).
 
-
 ### Environment and Reproducibility
 - Environment:
 To ensure scalability we provided in the repository a virtual environment with a requirements.txt file in which are signed all the dependencies we used.
 
-**By detailing our methods, design choices, and environment setup, we aim to provide readers with a clear understanding of the rationale behind our decisions and enable them to replicate our work effectively. The inclusion of a flowchart enhances the visual comprehension of the entire process.**
-
-## Experimental Design:
-### Algorithm Comparison
-- Main Purpose:
-The primary goal of this experiment is to compare the performance of different classification algorithms in identifying fraudulent SMS messages. We aim to determine which algorithm(s) best suit our specific binary classification task.
-
-- Baseline:
-The baseline for this experiment is meant to be the Logistic Regression model since is one of the simplest linear classification model. In this way, we could try and experiment easily how various preprocessing methods affect the yield of the model.
-
+### Performance Evaluation
 - Evaluation Metric(s):
 To evaluate the effectiveness of each algorithm, we employed the following metrics:
 
@@ -73,28 +63,28 @@ To evaluate the effectiveness of each algorithm, we employed the following metri
 
     3. F1 Score: The F1 score combines precision and recall, offering a balanced assessment of model performance, particularly when dealing with imbalanced datasets.
 
-### Hyperparameter Tuning
-- Main Purpose:
-In this experiment, we focused on hyperparameter tuning for the best-performing algorithm identified across the classification models. The objective is to optimize the model's performance by fine-tuning its hyperparameters.
-
-- Baseline:
-The baseline is the default configuration of the chosen algorithm. We compare the model's performance with default hyperparameters against the tuned version.
-
-## Results
+## Results:
 ### Main Finding(s)
 - Model Performance Comparison
-After proceeding with each one of our classification models, comparing the performance of SVM(knows as SVC in sklearn), Random Forest, and MultinomialNB, we found that SVM emerged as the top-performing model. The evaluation metrics, including accuracy, precision, recall, and F1 score, were considered to assess each model's effectiveness in identifying fraudulent SMS messages.
+After proceeding with each one of our classification models, comparing the performance of Logistic Regression, SVM and Random Forest, we found that SVM and Logistic Regression emerged as the top-performing models. The evaluation metrics, including accuracy, precision, recall, and F1 score, were considered to assess each model's effectiveness in identifying fraudulent SMS messages.
 
-- Hyperparameter Tuning Results for SVM
-In regards to our SVM classification model, where hyperparameter tuning was applied to SVM, we observed a significant improvement in overall performance. The tuned SVM model exhibited enhanced accuracy, precision, recall, and F1 score compared to the baseline configuration.
-- This can be seen perfectly in the main.ipynb file, within confusion matrices and classification reports.
+- Hyperparameter Tuning Results 
+In regards to our tuned classification models, we observed a significant improvement in overall performance except for Random Forest. The tuned SVM and Logistic Regression models exhibited enhanced accuracy, precision, recall, and F1 score compared to the baseline configurations.
 
 ## Conclusion
-In conclusion, our project focused on addressing SMS-based fraud using machine learning models, specifically SVM, Random Forest, and MultinomialNB. Through comprehensive experiments and analysis, we identified SVM as the most effective model, achieving superior results in accuracy, precision, recall, and F1 score. The hyperparameter tuning of SVM further optimized its performance, showcasing the significance of model configuration in fraud detection. Additionally, considering temporal patterns contributed to a more nuanced understanding, enhancing the model's capabilities during specific time intervals. Our work underscores the importance of selecting appropriate models, fine-tuning parameters, and incorporating temporal insights for robust fraud detection in SMS communications.
+In conclusion, our project focused on addressing SMS fraud using machine learning models, specifically Logistic Regression, SVM, and Random Forest. Through comprehensive experiments and analysis, we identified Logistic Regression as the most effective model, achieving superior results in accuracy, precision, recall, and F1 score (By the way, also SVM achieved very good and efficient results). The hyperparameter tuning of Logistic Regression slightly optimized its performance. Additionally, considering temporal patterns contributed to a more nuanced understanding, enhancing the model's capabilities during specific time intervals.
+
+![LogReg](images/LogReg.jpg)
+![SVM](images/SVM.jpg)
+![Random Forest](images/RandomF.jpg)
+
+![tuned LogReg](images/tunedLogReg.jpg)
+![tuned SVM](images/TunedSVC.jpg)
+![tuned Random Forest](images/tunedRandomForest.jpg)
 
 However, there are aspects that our project did not fully address. Further exploration could delve into the interpretability of the models, providing insights into the features contributing most to fraud detection. Additionally, a deeper investigation into evolving fraud patterns and the adaptability of the model over time could enhance the long-term effectiveness of our solution. Lastly, ethical considerations surrounding the deployment of fraud detection mechanisms, including potential biases and privacy concerns, warrant careful examination in future iterations of this work. These unanswered questions pave the way for continued research and refinement in the dynamic landscape of digital security solutions.
 
-In essence, the outcomes of our project not only advance the understanding of SMS-based fraud detection but also offer valuable insights with broader implications for digital security. The success of the SVM model, coupled with meticulous hyperparameter tuning, signifies a significant stride towards more robust and adaptive fraud detection systems. As digital communication continues to be an integral part of our lives, the methodologies and findings presented here lay a foundation for enhancing security measures not only in SMS-based interactions but also in other realms of digital communication. The optimized SVM model, with its heightened accuracy and precision, showcases the potential for real-world applications, ranging from securing personal communications to fortifying digital platforms against evolving fraudulent tactics. This project thus stands as a stepping stone towards bolstering digital security practices in our interconnected world.
+In essence, the outcomes of our project not only advance the understanding of SMS-based fraud detection but also offer valuable insights with broader implications for digital security. The success of the Logistic Regression model, coupled with hyperparameter tuning, signifies a significant stride towards more robust and adaptive fraud detection systems. As digital communication continues to be an integral part of our lives, the methodologies and findings presented here lay a foundation for enhancing security measures not only in SMS-based interactions but also in other realms of digital communication. The optimized Logistic Regression model, with its heightened accuracy and precision, showcases the potential for real-world applications, ranging from securing personal communications to fortifying digital platforms against evolving fraudulent tactics. This project thus stands as a stepping stone towards bolstering digital security practices in our interconnected world.
 
 ## APPENDIX: IMPROVEMENTS
-We decided to add this appendix to suggest some improvements to do: maybe we could try to increase the performance of the other models trying to scale the dataset or to add other features (like the ones we analyzed scratching the surface. Another improvement could be the one, during the preprocessing phase, of scaling all the words in lowercase, so that the model could concentrate on more important features.
+We decided to add this appendix to suggest some improvements to do: maybe we could try to increase the performance of tuned Random Forest by searching for better parameters(this involves a meticoulous search and experiment for different params). In addition we could try to minimize false negatives (that at the end resulted to be quite high in contrast to false positives) trying to scale the dataset or to add other features (like the ones we analyzed just by scratching the surface). Another improvement could be the one, during the preprocessing phase, of scaling all the words in lowercase, so that the model could concentrate on more important features and reduce the overall complexity.
