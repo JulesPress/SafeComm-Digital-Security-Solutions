@@ -74,13 +74,17 @@ In regards to our tuned classification models, we observed a significant improve
 ## Conclusion
 In conclusion, our project focused on addressing SMS fraud using machine learning models, specifically Logistic Regression, SVM, and Random Forest. Through comprehensive experiments and analysis, we identified Logistic Regression as the most effective model, achieving superior results in accuracy, precision, recall, and F1 score (By the way, also SVM achieved very good and efficient results). The hyperparameter tuning of Logistic Regression slightly optimized its performance. Additionally, considering temporal patterns contributed to a more nuanced understanding, enhancing the model's capabilities during specific time intervals.
 
-![LogReg](images/LogReg.jpg)
+# Default models
+![LogReg](images/LogReg.jpg)![tuned LogReg conf](images/deafaultmodels.jpg)
 ![SVM](images/SVM.jpg)
 ![Random Forest](images/RandomF.jpg)
+- As seen in these matrices, logistic regression and Random forests are the ones gaining the best results (49 false positives and false negatives), with the SVC having a slightly worse outcome (53 false positives and false negatives).
 
-![tuned LogReg](images/tunedLogReg.jpg)
-![tuned SVM](images/TunedSVC.jpg)
-![tuned Random Forest](images/tunedRandomForest.jpg)
+# Tuned models
+![tuned LogReg](images/tunedLogReg.jpg)    ![tuned LogReg conf](images/tunedLR.jpg)
+![tuned SVM](images/TunedSVC.jpg)            ![tuned SVM conf](images/tunedRF.jpg)
+![tuned Random Forest](images/tunedRandomForest.jpg)![tuned Random Forest conf](images/tunedSVM.jpg)
+- With the hypertuned results, the best outcome is given by the SVC (38 fp+fn), with logistic regression getting a better result than with the standard-tuned hyperparameters (40 fp+fn). The tuned version of the random forest is getting a worse outcome than with the standard parameter.
 
 However, there are aspects that our project did not fully address. Further exploration could delve into the interpretability of the models, providing insights into the features contributing most to fraud detection. Additionally, a deeper investigation into evolving fraud patterns and the adaptability of the model over time could enhance the long-term effectiveness of our solution. Lastly, ethical considerations surrounding the deployment of fraud detection mechanisms, including potential biases and privacy concerns, warrant careful examination in future iterations of this work. These unanswered questions pave the way for continued research and refinement in the dynamic landscape of digital security solutions.
 
