@@ -22,7 +22,7 @@ In the era of digital communication, Short Message Service (SMS) plays a pivotal
 
 ### *Dataset Overview:*
 
-The dataset provided for this project includes a mix of regular day-to-day messages and potentially fraudulent ones. Each SMS is labeled with a binary indicator (1 for fraudulent, 0 for non-fraudulent). Key features include the SMS text content, a unique identifier (ID) for each message, and a timestamp indicating when the SMS was sent.
+The dataset provided for this project includes a mix of regular day-to-day messages and potentially fraudulent ones. Each SMS is labeled with a binary indicator (1 for fraudulent, 0 for non-fraudulent). Key features include the SMS text content, a unique identifier (ID) for each message, and a timestamp indicating when the SMS was sent. Since the dataset is way too unbalanced, we opted for a resampling method (RandomOverSampler, because of its simple implementation). 
 
 ## Methods:
 ### Experimental design
@@ -76,18 +76,21 @@ In conclusion, our project focused on addressing SMS fraud using machine learnin
 
 # Default models
 <img src="images/LogReg.jpg" alt="Alt Text" width="550"/>
-<img src="images/SVM.jpg" alt="Alt Text" width="550"/>
+<img src="images/LogReg_conf.jpg" alt="Alt Text" width="550"/>
+<img src="images/SVC.jpg" alt="Alt Text" width="550"/>
+<img src="images/SVC_conf.jpg" alt="Alt Text" width="550"/>
 <img src="images/RandomF.jpg" alt="Alt Text" width="550"/>
-<img src="images/deafaultmodels.jpg" alt="Alt Text" width="550"/>
+<img src="images/RandomF_conf.jpg" alt="Alt Text" width="550"/>
+
 - As seen in these matrices, logistic regression and Random forests are the ones gaining the best results (49 false positives and false negatives), with the SVC having a slightly worse outcome (53 false positives and false negatives).
 
 # Tuned models
-<img src="images/tunedLogReg.jpg" alt="Alt Text" width="550"/>
-<img src="images/tunedLR.jpg" alt="Alt Text" width="550"/>
-<img src="images/tunedRandomForest.jpg" alt="Alt Text" width="550"/>
-<img src="images/tunedRF.jpg" alt="Alt Text" width="550"/>
-<img src="images/TunedSVC.jpg" alt="Alt Text" width="550"/>
-<img src="images/tunedSVM.jpg" alt="Alt Text" width="550"/>
+<img src="images/LogReg2.jpg" alt="Alt Text" width="550"/>
+<img src="images/LogReg2_conf.jpg" alt="Alt Text" width="550"/>
+<img src="images/SVC2.jpg" alt="Alt Text" width="550"/>
+<img src="images/SVC2_conf.jpg" alt="Alt Text" width="550"/>
+<img src="images/RandomF2.jpg" alt="Alt Text" width="550"/>
+<img src="images/RandomF2_conf.jpg" alt="Alt Text" width="550"/>
 - With the hypertuned results, the best outcome is given by the SVC (38 fp+fn), with logistic regression getting a better result than with the standard-tuned hyperparameters (40 fp+fn). The tuned version of the random forest is getting a worse outcome than with the standard parameter.
 
 However, there are aspects that our project did not fully address. Further exploration could delve into the interpretability of the models, providing insights into the features contributing most to fraud detection. Additionally, a deeper investigation into evolving fraud patterns and the adaptability of the model over time could enhance the long-term effectiveness of our solution. Lastly, ethical considerations surrounding the deployment of fraud detection mechanisms, including potential biases and privacy concerns, warrant careful examination in future iterations of this work. These unanswered questions pave the way for continued research and refinement in the dynamic landscape of digital security solutions.
@@ -95,4 +98,4 @@ However, there are aspects that our project did not fully address. Further explo
 In essence, the outcomes of our project not only advance the understanding of SMS-based fraud detection but also offer valuable insights with broader implications for digital security. The success of the Logistic Regression model, coupled with hyperparameter tuning, signifies a significant stride towards more robust and adaptive fraud detection systems. As digital communication continues to be an integral part of our lives, the methodologies and findings presented here lay a foundation for enhancing security measures not only in SMS-based interactions but also in other realms of digital communication. The optimized Logistic Regression model, with its heightened accuracy and precision, showcases the potential for real-world applications, ranging from securing personal communications to fortifying digital platforms against evolving fraudulent tactics. This project thus stands as a stepping stone towards bolstering digital security practices in our interconnected world.
 
 ## APPENDIX: IMPROVEMENTS
-We decided to add this appendix to suggest some improvements to do: maybe we could try to increase the performance of tuned Random Forest by searching for better parameters(this involves a meticoulous search and experiment for different params). In addition we could try to minimize false negatives (that at the end resulted to be quite high in contrast to false positives) trying to scale the dataset or to add other features (like the ones we analyzed just by scratching the surface). Another improvement could be the one, during the preprocessing phase, of scaling all the words in lowercase, so that the model could concentrate on more important features and reduce the overall complexity.
+We decided to add this appendix to suggest some improvements to do: maybe we could try to increase the performance of tuned Random Forest by searching for better parameters(this involves a meticoulous search and experiment for different params). In addition we could try to minimize false negatives (that at the end resulted to be quite high in contrast to false positives) trying to scale the dataset or to add other features (like the ones we analyzed just by scratching the surface).Apart from this, we could also treat the problem as a one-class classification problem, since the dimension of the Fraudulent class is way too small than the one of the Non-Fraudulent. Another improvement could be the one, during the preprocessing phase, of scaling all the words in lowercase, so that the model could concentrate on more important features and reduce the overall complexity.
