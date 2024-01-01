@@ -82,16 +82,16 @@ In conclusion, our project focused on addressing SMS fraud using machine learnin
 <img src="images/RandomF.PNG" alt="Alt Text" width="550"/>
 <img src="images/RandomF_conf.PNG" alt="Alt Text" width="550"/>
 
-- As seen in these matrices, logistic regression and Random forests are the ones gaining the best results (49 false positives and false negatives), with the SVC having a slightly worse outcome (53 false positives and false negatives).
+- As seen in these matrices, logistic regression and Random forests are the ones gaining the best results, with the SVC having a slightly worse outcome.
 
 # Tuned models
 <img src="images/LogReg2.PNG" alt="Alt Text" width="550"/>
 <img src="images/LogReg2_conf.PNG" alt="Alt Text" width="550"/>
-<img src="images/SVC2.PNG" alt="Alt Text" width="550"/>
+<img src="images/SVC2_.PNG" alt="Alt Text" width="550"/>
 <img src="images/SVC2_conf.PNG" alt="Alt Text" width="550"/>
 <img src="images/RandomF2.PNG" alt="Alt Text" width="550"/>
 <img src="images/RandomF2_conf.PNG" alt="Alt Text" width="550"/>
-- With the hypertuned results, the best outcome is given by the SVC (38 fp+fn), with logistic regression getting a better result than with the standard-tuned hyperparameters (40 fp+fn). The tuned version of the random forest is getting a worse outcome than with the standard parameter.
+- With the hypertuned results, the best outcome is given by the SVC, with logistic regression getting a better result than with the standard-tuned hyperparameters. The tuned version of the random forest is getting a worse outcome than with the standard parameter.
 
 However, there are aspects that our project did not fully address. Further exploration could delve into the interpretability of the models, providing insights into the features contributing most to fraud detection. Additionally, a deeper investigation into evolving fraud patterns and the adaptability of the model over time could enhance the long-term effectiveness of our solution. Lastly, ethical considerations surrounding the deployment of fraud detection mechanisms, including potential biases and privacy concerns, warrant careful examination in future iterations of this work. These unanswered questions pave the way for continued research and refinement in the dynamic landscape of digital security solutions.
 
