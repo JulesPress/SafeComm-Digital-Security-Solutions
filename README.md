@@ -90,9 +90,8 @@ In conclusion, our project focused on addressing SMS fraud using machine learnin
 <img src="images/SVC2_conf.PNG" alt="Alt Text" width="550"/>
 <img src="images/RandomF2.PNG" alt="Alt Text" width="550"/>
 <img src="images/RandomF2_conf.PNG" alt="Alt Text" width="550"/>
-- With the hypertuned results, the best outcome is given by the SVC, with logistic regression getting a better result than with the standard-tuned hyperparameters. The tuned version of the random forest is getting a worse outcome than with the standard parameter.
 
-  With the hypertuned results, the best outcome is given by the logistic regression, with SVC getting almost the same result than with the standard-tuned hyperparameters. The tuned version of the random forest is getting a worse outcome than with the standard parameter. The reason could be that the param-grid, in the grid-search algorithm for the model, is simplified (in order to have an acceptable running time, although it still takes some time to compute); upgrading this would require a lot more computations.
+With the hypertuned results, the best outcome is given by the logistic regression, with SVC getting almost the same result than with the standard-tuned hyperparameters. The tuned version of the random forest is getting a worse outcome than with the standard parameter. The reason could be that the param-grid, in the grid-search algorithm for the model, is simplified (in order to have an acceptable running time, although it still takes some time to compute); upgrading this would require a lot more computations.
 Considering the simplicity, the precision and the time complexity, Logistic Regression resulted as the best model among the tried ones.
 
 ## APPENDIX: IMPROVEMENTS
