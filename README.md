@@ -11,9 +11,9 @@ automatically. This way, we can warn users or even prevent these messages from b
 altogether.
 
 ## Team Members:
-- Eliya Allam. [289791]
-- Giulio Presaghi. [287611]
-- Marco Tagliavini. [283361]
+- Eliya Allam [289791]
+- Giulio Presaghi [287611]
+- Marco Tagliavini [283361]
 
 ## Introduction:
 ### *Background:*
