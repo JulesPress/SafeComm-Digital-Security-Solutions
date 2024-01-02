@@ -24,8 +24,11 @@ In the era of digital communication, Short Message Service (SMS) plays a pivotal
 
 The dataset provided for this project includes a mix of regular day-to-day messages and potentially fraudulent ones. Each SMS is labeled with a binary indicator (1 for fraudulent, 0 for non-fraudulent). Key features include the SMS text content, a unique identifier (ID) for each message, and a timestamp indicating when the SMS was sent. Since the dataset is way too unbalanced, we opted for a resampling method (RandomOverSampler, because of its simple implementation). 
 
-## Methods:
-### Experimental design
+## Setup:
+- Environment:
+To ensure scalability we provided in the repository a virtual environment with a requirements.txt file in which are reported all the dependencies we used. Once the repositoy is cloned, it is possible to activate the env (making sure to have python 3.10.5) and proceed with the installation of requirements.txt.
+
+### Data Preprocessing
 - Imputation of Missing Values:
 Before diving into the machine learning models, we conducted a thorough examination of the dataset to identify and handle missing values. Any missing values in features must be imputed using appropriate techniques to maintain the integrity of the dataset. Without finding any missing values, the analysis could proceed.
 
@@ -48,10 +51,6 @@ The dataset was split into training and test sets to assess model performance. T
 
 - Hyperparameters tuning
 Using grid searches algorithms, it was our goal to find better parameters to apply to the models, in order to achieve even better results. Comparison at the end (both between models and between the standard-hyperparameters results and the tuned-hyperparameters) helped to understand the importance of tuning and to decide the best model (although in some cases the tuning seems not so relevant).
-
-### Environment and Reproducibility
-- Environment:
-To ensure scalability we provided in the repository a virtual environment with a requirements.txt file in which are signed all the dependencies we used.
 
 ### Performance Evaluation
 - Evaluation Metric(s):
@@ -93,8 +92,8 @@ In conclusion, our project focused on addressing SMS fraud using machine learnin
 <img src="images/RandomF2_conf.PNG" alt="Alt Text" width="550"/>
 - With the hypertuned results, the best outcome is given by the SVC, with logistic regression getting a better result than with the standard-tuned hyperparameters. The tuned version of the random forest is getting a worse outcome than with the standard parameter.
 
-
-In essence, the outcomes of our project advance the understanding of SMS-based fraud detection. The success of the Logistic Regression model, coupled with hyperparameter tuning, signifies a significant stride towards more robust and adaptive fraud detection systems. As digital communication continues to be an integral part of our lives, the methodologies and findings presented here lay a foundation for enhancing security measures not only in SMS-based interactions but also in other realms of digital communication. The optimized Logistic Regression model, with its heightened accuracy and precision, showcases the potential for real-world applications, ranging from securing personal communications to fortifying digital platforms against evolving fraudulent tactics. This project thus stands as a stepping stone towards bolstering digital security practices in our interconnected world.
+  With the hypertuned results, the best outcome is given by the logistic regression, with SVC getting almost the same result than with the standard-tuned hyperparameters. The tuned version of the random forest is getting a worse outcome than with the standard parameter. The reason could be that the param-grid, in the grid-search algorithm for the model, is simplified (in order to have an acceptable running time, although it still takes some time to compute); upgrading this would require a lot more computations.
+Considering the simplicity, the precision and the time complexity, Logistic Regression resulted as the best model among the tried ones.
 
 ## APPENDIX: IMPROVEMENTS
 We decided to add this appendix to suggest some improvements to do:  the performance of tuned Random Forest could be increased by searching for better parameters (this involves a meticoulous search and experiment for different parameters, which is time and power consuming). The last reason determined the "lost" of Random Forest model in contrast to the other 2. Apart from this, we could also treat the problem as a one-class classification problem, since the dimension of the Fraudulent class is way too small than the one of the Non-Fraudulent.
